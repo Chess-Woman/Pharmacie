@@ -91,3 +91,45 @@ getUserProfileName()
 // document.getElementById("logout").addEventListener("click", function(){
 //     window.location.href = "login.html";
 // })
+
+
+function thankYou(){
+
+    var first = document.querySelector(".first")
+    var second = document.querySelector(".second")
+    var email = document.querySelector("#email")
+    var msg = document.querySelector("#msg")
+
+
+    if(msg.value.trim() != "" && email.value.trim() != ""){
+
+        first.innerHTML = ""
+        second.innerHTML = ""
+        
+        var h1 = document.createElement("H1")
+        var p = document.createElement("P")
+        var h2 = document.createElement("H2")
+        var img = document.createElement("IMG")
+
+        h1.innerText = "Thank You!"
+        p.innerText = "We have received your message. We will get back to you soon."
+
+        first.appendChild(h1)
+        first.appendChild(p)
+
+        img.src = "images/loading.gif"
+        img.width = "300"
+        h2.innerText = "You will be redirected shortly..."
+      
+        second.appendChild(img)
+        second.appendChild(h2)
+       
+        setTimeout(function(){
+            window.location.href="index.html"
+        },3000)
+    }else{
+        alert("You have to fill in all fields.")
+    }
+    
+
+}
